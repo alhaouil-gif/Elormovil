@@ -14,9 +14,17 @@ glide = "4.15.1"
 okhttp = "4.10.0"
 camerax = "1.4.0"
 gifdrawable = "1.2.29"
+recyclerview = "1.4.0"
+playServicesMaps = "20.0.0"
+osmdroid = "6.1.14"
+preferenceKtx = "1.2.1"
+
 [libraries]
 
 gifdrawable = { module = "pl.droidsonroids.gif:android-gif-drawable", version.ref = "gifdrawable" }
+
+
+ osmdroid-android = { module = "org.osmdroid:osmdroid-android", version.ref = "osmdroid" }
 
 
 
@@ -48,6 +56,9 @@ androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 androidx-activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
 androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
+androidx-recyclerview = { group = "androidx.recyclerview", name = "recyclerview", version.ref = "recyclerview" }
+play-services-maps = { group = "com.google.android.gms", name = "play-services-maps", version.ref = "playServicesMaps" }
+androidx-preference-ktx = { group = "androidx.preference", name = "preference-ktx", version.ref = "preferenceKtx" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

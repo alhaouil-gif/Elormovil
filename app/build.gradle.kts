@@ -26,6 +26,7 @@ android {
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+
         }
     }
     compileOptions {
@@ -34,6 +35,9 @@ android {
     }
     kotlinOptions {
         jvmTarget = "11"
+    }
+    buildFeatures {
+        viewBinding = true
     }
 }
 
@@ -50,6 +54,9 @@ dependencies {
 
     // Coroutines
     implementation(libs.kotlinx.coroutines.android)
+    implementation(libs.androidx.recyclerview)
+    implementation(libs.play.services.maps)
+    implementation(libs.androidx.preference.ktx)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
@@ -64,6 +71,7 @@ dependencies {
     implementation(libs.okhttp3)
     implementation(libs.okhttp3.logging.interceptor)
 
+    implementation(libs.androidx.recyclerview)
 
 
     implementation(libs.androidx.camera.core)
@@ -75,5 +83,6 @@ dependencies {
 
     implementation(libs.gifdrawable)
 
+    implementation(libs.osmdroid.android)
 
 }

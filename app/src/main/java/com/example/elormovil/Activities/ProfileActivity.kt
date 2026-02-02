@@ -14,6 +14,7 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import com.bumptech.glide.Glide
 import com.example.elormovil.R
+import com.example.elormovil.Activities.ReunionesActivity
 import com.example.elormovil.instances.RetrofitClient
 import com.example.elormovil.model.User
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
@@ -91,6 +92,13 @@ class ProfileActivity : AppCompatActivity() {
             if (checkCameraPermission()) abrirCamara()
             else requestCameraPermission()
         }
+
+        btnReuniones.setOnClickListener {
+            val i = Intent(this, ReunionesActivity::class.java)
+            i.putExtra("USER", user)
+            startActivity(i)
+        }
+
     }
 
     private fun mostrarInformacion(user: User) {
