@@ -36,6 +36,7 @@
 
 
 
+
         <activity
             android:name=".Activities.CrearReunionActivity"
             android:exported="false" />
@@ -57,6 +58,9 @@
         <!-- MainActivity -->
         <activity
             android:name=".Activities.MainActivity"
+            android:exported="true" />
+        <activity
+            android:name=".Activities.AlumnosProfesorActivity"
             android:exported="true" />
     </application>
 

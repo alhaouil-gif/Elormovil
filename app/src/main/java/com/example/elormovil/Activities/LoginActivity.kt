@@ -35,14 +35,19 @@ class LoginActivity : AppCompatActivity() {
         val btnLogin = findViewById<Button>(R.id.btnLogin)
         val btnForgot = findViewById<Button>(R.id.btnForgotPassword)
 
-        // Recordar último usuario
+        // -------------------------------
+        // AUTOCOMPLETAR USUARIO Y CONTRASEÑA
+        // -------------------------------
         val prefs = getSharedPreferences("MyPrefs", MODE_PRIVATE)
         val lastUser = prefs.getString("LAST_USER", "")
-        if (!lastUser.isNullOrEmpty()) {
-            etUsername.setText(lastUser)
-        }
+        val lastPass = prefs.getString("LAST_PASS", "")
 
-        // --- LOGIN ---
+        if (!lastUser.isNullOrEmpty()) etUsername.setText(lastUser)
+        if (!lastPass.isNullOrEmpty()) etPassword.setText(lastPass)
+
+        // -------------------------------
+        // LOGIN
+        // -------------------------------
         btnLogin.setOnClickListener {
             val username = etUsername.text.toString().trim()
             val password = etPassword.text.toString().trim()
@@ -57,27 +62,32 @@ class LoginActivity : AppCompatActivity() {
 
             RetrofitClient.apiService.login(loginRequest)
                 .enqueue(object : Callback<User> {
+
                     override fun onResponse(call: Call<User>, response: Response<User>) {
                         when {
                             response.isSuccessful -> {
                                 val user = response.body()!!
-                                prefs.edit().putString("LAST_USER", user.username).apply()
 
-                                // Pasamos el usuario completo a AlumnoActivity
+                                // Guardar usuario y contraseña
+                                prefs.edit()
+                                    .putString("LAST_USER", user.username)
+                                    .putString("LAST_PASS", password)
+                                    .apply()
+
                                 val intent = Intent(this@LoginActivity, ProfileActivity::class.java)
                                 intent.putExtra("USER", user)
                                 startActivity(intent)
                                 finish()
                             }
-                            response.code() == 404 -> {
+
+                            response.code() == 404 ->
                                 Toast.makeText(this@LoginActivity, "Usuario no existe", Toast.LENGTH_SHORT).show()
-                            }
-                            response.code() == 401 -> {
+
+                            response.code() == 401 ->
                                 Toast.makeText(this@LoginActivity, "Contraseña incorrecta", Toast.LENGTH_SHORT).show()
-                            }
-                            else -> {
+
+                            else ->
                                 Toast.makeText(this@LoginActivity, "Error de login: ${response.code()}", Toast.LENGTH_SHORT).show()
-                            }
                         }
                     }
 
@@ -87,7 +97,9 @@ class LoginActivity : AppCompatActivity() {
                 })
         }
 
-        // --- OLVIDÉ CONTRASEÑA ---
+        // -------------------------------
+        // OLVIDÉ CONTRASEÑA
+        // -------------------------------
         btnForgot.setOnClickListener {
             val emailInput = EditText(this)
             emailInput.hint = "Introduce tu email"
@@ -99,11 +111,13 @@ class LoginActivity : AppCompatActivity() {
                 .setView(emailInput)
                 .setPositiveButton("Enviar") { dialog, _ ->
                     val email = emailInput.text.toString().trim()
+
                     if (email.isBlank()) {
                         Toast.makeText(this, "Email vacío", Toast.LENGTH_SHORT).show()
                     } else {
                         RetrofitClient.apiService.recoverPassword(mapOf("email" to email))
                             .enqueue(object : Callback<Map<String, String>> {
+
                                 override fun onResponse(
                                     call: Call<Map<String, String>>,
                                     response: Response<Map<String, String>>
@@ -132,11 +146,10 @@ class LoginActivity : AppCompatActivity() {
                                 }
                             })
                     }
+
                     dialog.dismiss()
                 }
-                .setNegativeButton("Cancelar") { dialog, _ ->
-                    dialog.dismiss()
-                }
+                .setNegativeButton("Cancelar") { dialog, _ -> dialog.dismiss() }
                 .show()
         }
     }

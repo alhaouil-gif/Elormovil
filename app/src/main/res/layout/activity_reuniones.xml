@@ -27,19 +27,6 @@
             android:layout_height="wrap_content"
             android:text="Crear"/>
 
-        <Button
-            android:id="@+id/btnAceptar"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:text="Aceptar"/>
-
-        <Button
-            android:id="@+id/btnCancelar"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:text="Cancelar"/>
 
     </LinearLayout>
 

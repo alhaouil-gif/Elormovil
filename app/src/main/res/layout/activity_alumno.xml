@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/scrollView"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp"
@@ -13,95 +12,156 @@
         android:orientation="vertical"
         android:gravity="center_horizontal">
 
-        <!-- Foto de perfil -->
-        <ImageView
-            android:id="@+id/imgFoto"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:layout_marginBottom="16dp"
-            android:scaleType="centerCrop"
-            android:src="@drawable/ic_person"
-            android:contentDescription="@string/perfil_foto"
-            android:background="@drawable/circle_background"
-            android:padding="4dp" />
-
-        <!-- Botón para tomar foto -->
-        <Button
-            android:id="@+id/btnTomarFoto"
+        <!-- FOTO + BOTÓN -->
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Tomar Foto"
-            android:layout_marginBottom="24dp"/>
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:layout_marginBottom="24dp">
 
-        <!-- Información del usuario -->
-        <TextView
-            android:id="@+id/tvNombre"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Nombre: "
-            android:textSize="18sp"
-            android:layout_marginBottom="8dp"/>
+            <ImageView
+                android:id="@+id/imgFoto"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_person"
+                android:background="@drawable/circle_background"
+                android:padding="4dp"
+                android:contentDescription="@string/perfil_foto" />
 
-        <TextView
-            android:id="@+id/tvApellidos"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Apellidos: "
-            android:textSize="18sp"
-            android:layout_marginBottom="8dp"/>
+            <Button
+                android:id="@+id/btnTomarFoto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/tomar_foto1"
+                android:layout_marginTop="12dp" />
+        </LinearLayout>
 
-        <TextView
-            android:id="@+id/tvEmail"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Email: "
-            android:textSize="18sp"
-            android:layout_marginBottom="8dp"/>
-
-        <TextView
-            android:id="@+id/tvDireccion"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Dirección: "
-            android:textSize="18sp"
-            android:layout_marginBottom="8dp"/>
-
-        <TextView
-            android:id="@+id/tvTelefono1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Teléfono: "
-            android:textSize="18sp"
-            android:layout_marginBottom="8dp"/>
-
-        <TextView
-            android:id="@+id/tvTipo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Tipo: "
-            android:textSize="18sp"
-            android:layout_marginBottom="16dp"/>
-
-        <!-- Botones de acción -->
-        <Button
-            android:id="@+id/btnHorarios"
+        <!-- TARJETA DE INFORMACIÓN -->
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Horarios"
-            android:layout_marginBottom="8dp"/>
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:background="@drawable/card_background"
+            android:layout_marginBottom="24dp">
 
-        <Button
-            android:id="@+id/btnReuniones"
+            <TextView
+                android:id="@+id/tvNombre"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/nombre1"
+                android:textSize="18sp"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:id="@+id/tvApellidos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/apellidos1"
+                android:textSize="18sp"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:id="@+id/tvEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/email1"
+                android:textSize="18sp"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:id="@+id/tvDireccion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/direcci_n"
+                android:textSize="18sp"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:id="@+id/tvTelefono1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/tel_fono"
+                android:textSize="18sp"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:id="@+id/tvTipo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/tipo1"
+                android:textSize="18sp"
+                android:layout_marginBottom="8dp" />
+        </LinearLayout>
+
+        <!-- BOTONES DE ACCIÓN -->
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Reuniones"
-            android:layout_marginBottom="8dp"/>
+            android:orientation="vertical"
+            android:layout_marginBottom="24dp">
 
+            <Button
+                android:id="@+id/btnHorarios"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/horarios1"
+                android:layout_marginBottom="12dp" />
+
+            <Button
+                android:id="@+id/btnReuniones"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/reuniones1"
+                android:layout_marginBottom="12dp" />
+
+            <Button
+                android:id="@+id/btnCiclos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/ciclos1"
+                android:layout_marginBottom="12dp" />
+        </LinearLayout>
+
+        <!-- CAMBIAR TEMA -->
         <Button
-            android:id="@+id/btnCiclos"
+            android:id="@+id/btnCambiarTema"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Ciclos"
-            android:layout_marginBottom="8dp"/>
+            android:text="@string/cambiar_tema"
+            android:layout_marginBottom="24dp" />
+
+        <!-- IDIOMAS -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginBottom="24dp">
+
+            <Button
+                android:id="@+id/btnEs"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="ES" />
+
+            <Button
+                android:id="@+id/btnEu"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="EU" />
+
+            <Button
+                android:id="@+id/btnEn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="EN" />
+        </LinearLayout>
+
     </LinearLayout>
 </ScrollView>

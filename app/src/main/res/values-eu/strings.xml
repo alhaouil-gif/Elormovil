@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">ElorMovil</string>
+    <string name="logo">logoa</string>
+    <string name="perfil_foto">Profil argazkia</string>
+    <string name="tomar_foto">Argazkia atera</string>
+    <string name="nombre">Izena:</string>
+    <string name="apellidos">Abizenak:</string>
+    <string name="email">Emaila:</string>
+    <string name="direccion">Helbidea:</string>
+    <string name="telefono">Telefonoa:</string>
+    <string name="tipo">Mota:</string>
+    <string name="horarios">Ordutegiak</string>
+    <string name="reuniones">Bilerak</string>
+    <string name="ciclos">Zikloak</string>
+    <string name="cambiar_tema">Gaia aldatu</string>
+    <string name="no_disponible">Ez dago eskuragarri</string>
+    <string name="ciclos1">Zikloak</string>
+    <string name="reuniones1">Bilerak</string>
+    <string name="horarios1">Ordutegiak</string>
+    <string name="tipo1">Mota:</string>
+    <string name="tel_fono">Telefonoa:</string>
+    <string name="direcci_n">Helbidea:</string>
+    <string name="email1">Emaila:</string>
+    <string name="apellidos1">Abizenak:</string>
+    <string name="nombre1">Izena:</string>
+    <string name="tomar_foto1">Argazkia atera</string>
+</resources>

@@ -16,7 +16,7 @@ class AdapterFila(
         val rv = RecyclerView(context)
         rv.layoutParams = ViewGroup.LayoutParams(
             ViewGroup.LayoutParams.MATCH_PARENT,
-            200
+            ViewGroup.LayoutParams.WRAP_CONTENT
         )
         rv.layoutManager =
             LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)

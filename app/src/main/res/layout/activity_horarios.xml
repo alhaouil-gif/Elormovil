@@ -1,38 +1,109 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="8dp">
 
-    <!-- Título de la tabla -->
     <TextView
         android:id="@+id/tvTitulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Horario Visual"
+        android:text="Horario Semanal"
         android:textSize="20sp"
         android:textStyle="bold"
         android:layout_gravity="center"
-        android:paddingBottom="8dp"/>
+        android:paddingBottom="8dp"
+        android:textColor="#3cb4e5"/>
 
-    <!-- Scroll vertical -->
+    <!-- SPINNER 1 (Modo) -->
+    <Spinner
+        android:id="@+id/spinnerModo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="48dp"
+        android:padding="8dp"
+        android:layout_marginTop="16dp"/>
+
+    <!-- SPINNER 2 (Filtro Ciclo) -->
+    <Spinner
+        android:id="@+id/spinnerFiltro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="48dp"
+        android:padding="8dp"/>
+
+    <!-- LABEL CURSO -->
+    <TextView
+        android:id="@+id/labelCurso"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Elige curso"
+        android:textSize="16sp"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="4dp"
+        android:visibility="gone" />
+
+    <!-- RADIO CURSO -->
+    <RadioGroup
+        android:id="@+id/radioCurso"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        android:layout_marginTop="12dp">
+
+        <RadioButton
+            android:id="@+id/radioCurso1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1º"/>
+
+        <RadioButton
+            android:id="@+id/radioCurso2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2º"/>
+    </RadioGroup>
+
+    <!-- LABEL PROFESOR -->
+    <TextView
+        android:id="@+id/labelProfesor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Elige profesor"
+        android:textSize="16sp"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="4dp"
+        android:visibility="gone" />
+
+    <!-- SPINNER PROFESOR -->
+    <Spinner
+        android:id="@+id/spinnerProfesor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="48dp"
+        android:padding="8dp"
+        android:layout_marginBottom="70dp" />
+
+    <!-- TABLA ABAJO -->
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="0dp"
+        android:layout_weight="1">
 
-        <!-- Scroll horizontal dentro del vertical -->
         <HorizontalScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <!-- TableLayout principal -->
             <TableLayout
                 android:id="@+id/rvFilas"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:stretchColumns="*"/>
+
         </HorizontalScrollView>
+
     </ScrollView>
 
 </LinearLayout>

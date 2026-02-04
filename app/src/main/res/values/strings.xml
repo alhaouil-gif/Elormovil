@@ -1,5 +1,27 @@
 <resources>
     <string name="app_name">ElorMovil</string>
     <string name="logo">logo</string>
-    <string name="perfil_foto">foto</string>
+    <string name="perfil_foto">Foto de perfil</string>
+    <string name="tomar_foto">Tomar foto</string>
+    <string name="nombre">Nombre:</string>
+    <string name="apellidos">Apellidos:</string>
+    <string name="email">Email:</string>
+    <string name="direccion">Dirección:</string>
+    <string name="telefono">Teléfono:</string>
+    <string name="tipo">Tipo:</string>
+    <string name="horarios">Horarios</string>
+    <string name="reuniones">Reuniones</string>
+    <string name="ciclos">Ciclos</string>
+    <string name="cambiar_tema">Cambiar tema</string>
+    <string name="no_disponible">No disponible</string>
+    <string name="ciclos1">Ciclos</string>
+    <string name="reuniones1">Reuniones</string>
+    <string name="horarios1">Horarios</string>
+    <string name="tipo1">Tipo:</string>
+    <string name="tel_fono">Teléfono:</string>
+    <string name="direcci_n">Dirección:</string>
+    <string name="email1">Email:</string>
+    <string name="apellidos1">Apellidos:</string>
+    <string name="nombre1">Nombre:</string>
+    <string name="tomar_foto1">Tomar Foto</string>
 </resources>

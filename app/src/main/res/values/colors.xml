@@ -1,6 +1,16 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
-    <color name="primary_color">#FF000000</color>
+    <!-- Tus colores personalizados -->
+    <color name="colorPrimary">#008aab</color>
+    <color name="colorSecondary">#ecb4e5</color>
+    <color name="colorDarkBackground">#211261</color>
+
+    <!-- Colores que faltaban -->
+    <color name="white">#FFFFFF</color>
+    <color name="primary_color">#008aab</color>
+
+    <!-- Opcionales para temas -->
+    <color name="backgroundLight">#FFFFFF</color>
+    <color name="backgroundDark">#211261</color>
+    <color name="textLight">#000000</color>
+    <color name="textDark">#FFFFFF</color>
 </resources>

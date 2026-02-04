@@ -40,7 +40,7 @@
             app:tint="@color/primary_color"/>
     </LinearLayout>
 
-    <!-- Estado (pendiente, aceptada, cancelada) -->
+    <!-- Estado (pendiente, aceptada, denegada, cancelada) -->
     <TextView
         android:id="@+id/tvEstado"
         android:layout_width="wrap_content"
@@ -48,16 +48,24 @@
         android:textColor="#555555"
         android:layout_marginTop="4dp"/>
 
-    <!-- Botones aceptar y cancelar -->
+    <!-- Botones aceptar, denegar y cancelar -->
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp">
+        android:layout_marginTop="8dp"
+        android:weightSum="3">
 
         <Button
             android:id="@+id/btnAceptar"
             android:text="Aceptar"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"/>
+
+        <Button
+            android:id="@+id/btnDenegar"
+            android:text="Denegar"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"/>

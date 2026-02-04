@@ -65,6 +65,8 @@ class ReunionAdapter(
         val iconoUbicacion: ImageView = v.findViewById(R.id.iconoUbicacion)
         val aceptar: Button = v.findViewById(R.id.btnAceptar)
         val cancelar: Button = v.findViewById(R.id.btnCancelar)
+        val denegar: Button = v.findViewById(R.id.btnDenegar)
+
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): VH {
@@ -209,8 +211,14 @@ class ReunionAdapter(
             // Usuario tipo 3 ve los botones
             h.aceptar.visibility = View.VISIBLE
             h.cancelar.visibility = View.VISIBLE
+            h.denegar.visibility = View.VISIBLE
+
+
 
             // Listeners
+            h.denegar.setOnClickListener {
+                r.id_reunion?.let { id -> cambiarEstado(id, "denegada") }
+            }
             h.aceptar.setOnClickListener {
                 r.id_reunion?.let { id -> cambiarEstado(id, "aceptada") }
             }
