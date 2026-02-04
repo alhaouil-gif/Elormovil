@@ -41,8 +41,8 @@ class ProfileActivity : AppCompatActivity() {
 
     private lateinit var btnHorarios: Button
     private lateinit var btnReuniones: Button
-    private lateinit var btnCiclos: Button
     private lateinit var btnTomarFoto: Button
+    private lateinit var btnMisAlumnos: Button
 
     private lateinit var user: User
 
@@ -63,8 +63,8 @@ class ProfileActivity : AppCompatActivity() {
 
         btnHorarios = findViewById(R.id.btnHorarios)
         btnReuniones = findViewById(R.id.btnReuniones)
-        btnCiclos = findViewById(R.id.btnCiclos)
         btnTomarFoto = findViewById(R.id.btnTomarFoto)
+        btnMisAlumnos = findViewById(R.id.btnMisAlumnos)
 
         user = intent.getSerializableExtra("USER") as? User ?: run {
             Toast.makeText(this, "Usuario no válido", Toast.LENGTH_SHORT).show()
@@ -99,6 +99,12 @@ class ProfileActivity : AppCompatActivity() {
             startActivity(i)
         }
 
+        btnMisAlumnos.setOnClickListener {
+            val i = Intent(this, AlumnosProfesorActivity::class.java)
+            i.putExtra("USER", user)
+            startActivity(i)
+        }
+
     }
 
     private fun mostrarInformacion(user: User) {
@@ -117,12 +123,16 @@ class ProfileActivity : AppCompatActivity() {
     private fun configurarBotonesSegunTipo(tipoId: Int?) {
         btnHorarios.visibility = View.VISIBLE
         btnReuniones.visibility = View.VISIBLE
-        btnCiclos.visibility = View.VISIBLE
+        btnMisAlumnos.visibility = View.GONE
+
+        // Mostrar botón "Mis Alumnos" solo para profesores
+        if (tipoId == 3) {
+            btnMisAlumnos.visibility = View.VISIBLE
+        }
 
         if (tipoId != 3 && tipoId != 4) {
             btnHorarios.visibility = View.GONE
             btnReuniones.visibility = View.GONE
-            btnCiclos.visibility = View.GONE
         }
     }
 

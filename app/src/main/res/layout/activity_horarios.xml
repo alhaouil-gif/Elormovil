@@ -1,11 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="8dp">
 
-    <!-- Título de la tabla -->
     <TextView
         android:id="@+id/tvTitulo"
         android:layout_width="wrap_content"
@@ -16,23 +15,62 @@
         android:layout_gravity="center"
         android:paddingBottom="8dp"/>
 
-    <!-- Scroll vertical -->
+    <!-- SPINNERS ARRIBA -->
+
+    <Spinner
+        android:id="@+id/spinnerModo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <Spinner
+        android:id="@+id/spinnerFiltro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <RadioGroup
+        android:id="@+id/radioCurso"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        android:layout_marginTop="12dp">
+
+        <RadioButton
+            android:id="@+id/radioCurso1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1º"/>
+
+        <RadioButton
+            android:id="@+id/radioCurso2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2º"/>
+    </RadioGroup>
+    <Spinner
+        android:id="@+id/spinnerProfesor"
+        android:layout_width="match_parent"
+        android:layout_height="108dp"
+        android:layout_marginBottom="40dp" />
+
+    <!-- TABLA ABAJO -->
+
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="0dp"
+        android:layout_weight="1">
 
-        <!-- Scroll horizontal dentro del vertical -->
         <HorizontalScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <!-- TableLayout principal -->
             <TableLayout
                 android:id="@+id/rvFilas"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:stretchColumns="*"/>
+
         </HorizontalScrollView>
+
     </ScrollView>
 
 </LinearLayout>

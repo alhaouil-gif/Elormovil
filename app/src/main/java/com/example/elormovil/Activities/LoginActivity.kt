@@ -88,6 +88,7 @@ class LoginActivity : AppCompatActivity() {
         }
 
         // --- OLVIDÉ CONTRASEÑA ---
+
         btnForgot.setOnClickListener {
             val emailInput = EditText(this)
             emailInput.hint = "Introduce tu email"

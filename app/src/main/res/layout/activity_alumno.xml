@@ -98,10 +98,11 @@
             android:layout_marginBottom="8dp"/>
 
         <Button
-            android:id="@+id/btnCiclos"
+            android:id="@+id/btnMisAlumnos"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Ciclos"
-            android:layout_marginBottom="8dp"/>
+            android:text="Mis Alumnos"
+            android:layout_marginBottom="8dp"
+            android:visibility="gone"/>
     </LinearLayout>
 </ScrollView>

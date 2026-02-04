@@ -222,7 +222,7 @@ class CrearReunionActivity : AppCompatActivity() {
                         Aula: ${reunionCreada.aula}
                         Alumno: ${alumno.nombre} ${alumno.apellidos}
                         Centro: $centroNombre
-                    """.trimIndent()
+        2            """.trimIndent()
 
                  val payload = mapOf(
                         "emailAlumno" to (alumno.email ?: ""),

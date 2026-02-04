@@ -18,7 +18,7 @@ class AdapterCelda(
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context)
             .inflate(R.layout.celda_item, parent, false)
-        // ⬆️ AQUÍ usa el nombre REAL del archivo XML
+        // AQUÍ usa el nombre REAL del archivo XML
         return ViewHolder(view)
     }
 
